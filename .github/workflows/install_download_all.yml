@@ -32,9 +32,9 @@ jobs:
         # with:
         #   version: 6.7.*
 
-      - name: build and install library
+      - name: build and install everything
         run: |
-          cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCPM_DOWNLOAD_ALL=1 --log-level=DEBUG
+          cmake -S ./all -Bbuild -DCMAKE_BUILD_TYPE=Release -DCPM_DOWNLOAD_ALL=1 --log-level=DEBUG
           cmake --build build --target Task1Standalone -j4 --verbose
           cmake --install ./build --prefix ./install_dir
           rm -rf build
