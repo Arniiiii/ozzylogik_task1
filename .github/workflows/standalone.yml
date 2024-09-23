@@ -38,4 +38,4 @@ jobs:
         run: cmake --build build -j4 --verbose
 
       - name: run
-        run: ./build/Greeter 8000 & sleep 5 ; kill $!
+        run: ./build/Task1 -v 4
