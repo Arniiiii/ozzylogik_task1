@@ -83,12 +83,16 @@ include(${CMAKE_CURRENT_LIST_DIR}/cmake/packages/add_fmtlog.cmake)
 target_link_libraries(${PROJECT_NAME} PUBLIC fmtlog::fmtlog)
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/packages/add_csv-parser.cmake)
 target_link_libraries(${PROJECT_NAME} PRIVATE csv)
-find_package(Qt6 REQUIRED COMPONENTS Core Sql)
-target_link_libraries(
-  ${PROJECT_NAME}
-  PUBLIC Qt6::Core
-   Qt6::Sql
-)
+find_package(Qt6 COMPONENTS Core Sql)
+find_package(Qt5 COMPONENTS Core Sql)
+if(${Qt6Core_FOUND})
+  target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Core Qt6::Sql)
+elseif(${Qt5Core_FOUND})                                         
+  target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Core Qt5::Sql)
+else()
+  message(FATAL_ERROR "WTF with found Qt ?!")
+endif()
+# target_link_libraries(${PROJECT_NAME} PUBLIC Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Sql)
 find_package(SQLite3)
 target_include_directories(${PROJECT_NAME} PRIVATE ${SQLite3_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${SQLite3_LIBRARIES})

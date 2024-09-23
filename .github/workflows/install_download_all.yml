@@ -29,8 +29,8 @@ jobs:
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4      
-        with:
-          version: 6.7.*
+        # with:
+        #   version: 6.7.*
 
       - name: build and install library
         run: |
