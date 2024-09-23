@@ -22,14 +22,14 @@ file(GLOB headers CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp)
 add_executable(${PROJECT_NAME} ${sources} ${headers})
 target_include_directories(
   ${PROJECT_NAME} PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-                         # $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+  # $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
 )
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 23 OUTPUT_NAME "Task1")
 
 CPMAddPackage(NAME Task1 SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 target_link_libraries(${PROJECT_NAME} PRIVATE Task1::Task1)
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/packages/add_cxxopts.cmake)
-target_link_libraries(${PROJECT_NAME} INTERFACE cxxopts)
+target_link_libraries(${PROJECT_NAME} PRIVATE cxxopts::cxxopts)
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/packages/add_fmt.cmake)
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only)
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/packages/add_constexpr-to-string.cmake)
@@ -57,5 +57,6 @@ packageProject(
   VERSION_HEADER "${VERSION_HEADER_LOCATION}" EXPORT_HEADER "${EXPORT_HEADER_LOCATION}"
   BINARY_DIR ${PROJECT_BINARY_DIR}
   COMPATIBILITY "AnyNewerVersion" DISABLE_VERSION_SUFFIX ON
-  DEPENDENCIES "Task1 ${Task1_VERSION};cxxopts ${cxxopts_VERSION};fmt ${fmt_VERSION};constexpr-to-string ${constexpr-to-string_VERSION};magic_enum ${magic_enum_VERSION};fmtlog ${fmtlog_VERSION};"
+  DEPENDENCIES
+    "Task1 ${Task1_VERSION};cxxopts ${cxxopts_VERSION};fmt ${fmt_VERSION};constexpr-to-string ${constexpr-to-string_VERSION};magic_enum ${magic_enum_VERSION};fmtlog ${fmtlog_VERSION};"
 )

@@ -6,5 +6,6 @@ CPMAddPackage(
   VERSION ${fmtlog_VERSION}
   GIT_REPOSITORY https://github.com/Arniiiii/fmtlog_cmake_fix.git
   GIT_TAG master
-  OPTIONS "fmtlog_ENABLE_CPM ON" "fmtlog_CLANG_FORMAT_BINARY OFF" "fmtlog_WARNINGS_AS_ERRORS OFF" "fmtlog_USE_HEADER_ONLY_FMTLIB OFF"
+  OPTIONS "fmtlog_ENABLE_CPM ON" "fmtlog_CLANG_FORMAT_BINARY OFF" "fmtlog_WARNINGS_AS_ERRORS OFF"
+          "fmtlog_USE_HEADER_ONLY_FMTLIB OFF"
 )

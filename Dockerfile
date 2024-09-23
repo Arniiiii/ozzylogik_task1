@@ -16,7 +16,7 @@ RUN echo -e "[binhost]\npriority = 9999\nsync-uri = https://gentoo.osuosl.org/re
 
 
 RUN echo "Installing dependencies..."
-RUN FEATURES="parallel-fetch parallel-install" emerge --verbose --tree --verbose-conflicts --getbinpkg=y --jobs=8 dev-vcs/git dev-build/cmake zip
+RUN FEATURES="parallel-fetch parallel-install" emerge --verbose --tree --verbose-conflicts --getbinpkg=y --jobs=24 dev-vcs/git dev-build/cmake zip dev-qt/qtbase
 
 # RUN echo "Installing vcpkg..."
 # RUN git clone https://github.com/Microsoft/vcpkg.git && \
@@ -34,7 +34,7 @@ COPY . .
 RUN ls -lah
 
 RUN echo "Configuring project..."
-RUN cmake -S ./ -B ./build --log-level DEBUG -DFETCHCONTENT_QUIET=OFF
+RUN cmake -S ./all -B ./build --log-level DEBUG -DFETCHCONTENT_QUIET=OFF
 
 
 RUN echo "Building project..."
