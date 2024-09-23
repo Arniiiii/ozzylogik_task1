@@ -15,20 +15,21 @@ env:
 
 jobs:
   build:
-    runs-on: gentoo
-    steps:
-      - uses: https://github.com/Arniiiii/checkout_path_fix@main
+    runs-on: ubuntu-latest
 
-      # - uses: actions/cache@v3
-      #   with:
-      #     path: "**/cpm_modules"
-      #     key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        with:
+          path: "**/cpm_modules"
+          key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
 
       - name: configure
         run: cmake -Sstandalone -Bbuild -DCMAKE_BUILD_TYPE=Debug --log-level=DEBUG
 
       - name: build
-        run: cmake --build build -j$(nproc) --verbose
+        run: cmake --build build -j4 --verbose
 
       - name: run
-        run: ./build/Task1 --help
+        run: ./build/Greeter 8000 & sleep 5 ; kill $!
