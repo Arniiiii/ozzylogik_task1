@@ -1,10 +1,10 @@
 [![Actions Status](https://github.com/Arniiiii/ozzylogik_task1/workflows/MacOS/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
 [![Actions Status](https://github.com/Arniiiii/ozzylogik_task1/workflows/Windows/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
 [![Actions Status](https://github.com/Arniiiii/ozzylogik_task1/workflows/Ubuntu/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
-[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/Install/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
-[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/Install_CPM_DOWNLOAD_ALL/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
-[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/Standalone/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
-[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/Style/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
+[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/install/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
+[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/install_download_all.yml/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
+[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/standalone/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
+[![Actions Status](https:github.com/Arniiiii/ozzylogik_task1/workflows/style/badge.svg)](https://github.com/Arniiiii/ozzylogik_task1/actions)
 
 # ozzylogik_task1
 
