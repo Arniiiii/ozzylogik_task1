@@ -36,9 +36,10 @@ cmake --build ./build --target Task1Standalone --parallel $(nproc)
 2. Installed either Qt5 or Qt6
   - Everything else is expected to be downloaded at CMake's configure time.
 
+Problems:
+1. Not compilable at Windows since I use [fmtlog](https://github.com/Arniiiii/fmtlog_cmake_fix) which I haven't updated that properly to be it compilable at Windows.
+
 # from template:
-
-
 
 <p align="center">
   <img src="https://repository-images.githubusercontent.com/254842585/4dfa7580-7ffb-11ea-99d0-46b8fe2f4170" height="175" width="auto" />
