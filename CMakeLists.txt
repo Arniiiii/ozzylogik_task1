@@ -87,8 +87,10 @@ find_package(Qt6 COMPONENTS Core Sql)
 find_package(Qt5 COMPONENTS Core Sql)
 if(${Qt6Core_FOUND})
   target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Core Qt6::Sql)
+  set(QT_INSTALL_PACKAGEPROJECT "Qt6 6")
 elseif(${Qt5Core_FOUND})
   target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Core Qt5::Sql)
+  set(QT_INSTALL_PACKAGEPROJECT "Qt5 5")
 else()
   message(FATAL_ERROR "WTF with found Qt ?!")
 endif()
@@ -125,6 +127,6 @@ packageProject(
     # cmake-format:off DO *NOT* divide this like to different lines. It will destroy a lot of stuff
     # related to making this project not only installable, but usable via
     # `find_package(the_project)`
-  DEPENDENCIES "fmtlog ${fmtlog_VERSION};csv ${csv_parser_VERSION};Qt6 6"
-               # cmake-format:on
+  DEPENDENCIES "fmtlog ${fmtlog_VERSION};csv ${csv_parser_VERSION};${QT_INSTALL_PACKAGEPROJECT}"
+  # cmake-format:on
 )
