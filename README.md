@@ -32,9 +32,9 @@ cmake --build ./build --target Task1Standalone --parallel $(nproc)
 
 ## Prerequisites
 
-1. Installed CMake and a c++ compiler
-2. Installed either Qt5 or Qt6
-  - Everything else is expected to be downloaded at CMake's configure time.
+1. Installed CMake and a C++ compiler
+2. Installed either Qt5 or Qt6 and Sqlite
+  - Everything else is expected to be downloaded at CMake's configure time or be found at your system.
 
 Problems:
 1. Not compilable at Windows since I use [fmtlog](https://github.com/Arniiiii/fmtlog_cmake_fix) which I haven't updated that properly to be it compilable at Windows.
