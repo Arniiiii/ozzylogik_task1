@@ -37,7 +37,7 @@ cmake --build ./build --target Task1Standalone --parallel $(nproc)
   - Everything else is expected to be downloaded at CMake's configure time or be found at your system.
 
 Problems:
-1. Not compilable at Windows since I use [fmtlog](https://github.com/Arniiiii/fmtlog_cmake_fix) which I haven't updated that properly to be it compilable at Windows.
+1. Not compilable by MSVC at Windows since I use [fmtlog](https://github.com/Arniiiii/fmtlog_cmake_fix) which I haven't updated that properly to be it compilable with MSVC, though I could compile with gcc (though maybe disable ASAN via `-Dfmtlog_BUILD_WITH_ASAN=0`).
 
 # from template:
 
