@@ -39,6 +39,23 @@ cmake --build ./build --target Task1Standalone --parallel $(nproc)
 Problems:
 1. Not compilable by MSVC at Windows since I use [fmtlog](https://github.com/Arniiiii/fmtlog_cmake_fix) which I haven't updated that properly to be it compilable with MSVC, though I could compile with gcc (though maybe disable ASAN via `-Dfmtlog_BUILD_WITH_ASAN=0`).
 
+
+## Dependencies
+
+
+1. Qt5 or Qt6 (LGPL)
+2. fmtlog (MIT)
+3. constexpr-to-string (Unlicense)
+4. magic_enum (MIT)
+5. fmt (MIT with exception for binary distribution)
+6. cxxopts (MIT)
+7. [csv-parser](https://github.com/vincentlaucsb/csv-parser) (MIT)
+8. SQLite3 ([no copyrights?](https://github.com/sqlite/sqlite/blob/master/LICENSE.md))
+
+## License
+
+I don't care about the code here, so BSD-2
+
 # from template:
 
 <p align="center">
